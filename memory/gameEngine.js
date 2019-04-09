@@ -42,8 +42,8 @@ $(function()
                 }
                 else
                 {
-                    var firstCardNr = $firstCard.attr('id').substring(1);
-                    var currCardNr = $currCard.attr('id').substring(1);
+                    let firstCardNr = $firstCard.attr('id').substring(1);
+                    let currCardNr = $currCard.attr('id').substring(1);
                     
                     showCard($currCard);
     

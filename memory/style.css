@@ -1,0 +1,109 @@
+body
+{
+    margin: 0;
+    color: #209781;
+    font-family: 'Pacifico', cursive;
+    background-color: #25282D;
+}
+
+a:link    { color: #209781; text-decoration: none; }
+a:visited { color: #209781; }
+a:active  { color: #209781; }
+a:hover   { color: #E9B64A; }
+
+h1
+{
+    font-weight: 400;
+    font-size: 68px;
+    text-align: center;
+    letter-spacing: 10px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-weight: 400;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 10px;
+    margin-top: -35px;
+    margin-bottom: 0;
+}
+
+p
+{
+    margin-top: 0px;
+    text-align: center;
+    font-size: 30px;    
+    letter-spacing: 2px;
+}
+
+.board
+{
+    margin: 80px auto;
+    width: 600px;
+    text-align: center;
+}
+
+.cardActive
+{
+    margin: 5px;
+    border: 4px solid #0fc3a2;
+    border-radius: 5px;
+    width: 125px;
+    height: 125px;
+    display: inline-block;
+    cursor: default;
+    filter: brightness(100%);
+}
+
+.card
+{
+    margin: 5px;
+    border: 4px solid #0fc3a2;
+    border-radius:5px;
+    width: 125px;
+    height: 125px;
+    background-image: url("img/karta.png");
+    display: inline-block;
+    cursor: pointer;
+    filter: brightness(70%);
+}
+
+.card:hover
+{
+    border: 4px solid #E9B64A;
+    filter: brightness(100%);
+}
+
+.score
+{
+    text-align: center;
+    font-size: 40px;
+}
+
+.againButton
+{
+    font-size: 40px;
+    color: #25282D;
+    background-color: #209781;
+    border-radius: 5px;
+    width: 250px;
+    height: 80px;
+    text-align: center;
+    margin: 20px auto;
+    cursor: pointer;
+    text-align: center;
+}
+
+.againButton:hover
+{
+    color: #E9B64A;
+    background-color: #209781;
+    border-radius: 5px;
+    width: 250px;
+    height: 80px;
+    text-align: center;
+    margin: 20px auto;
+}

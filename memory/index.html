@@ -2,17 +2,38 @@
 <html lang="pl">
 <head>
 	<meta charset="utf-8" />
-	<title>Memory (The Witcher)</title>
+	<title>Memory Game (The Witcher)</title>
+	<meta name="description" content="JS Memory Game inspired by The Witcher (Gwent)">
+	<meta name="keywords" content="javascript, jQuery, game, gwent, memory">
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
 
 	<script type="text/javascript" src="http://livejs.com/live.js"></script>
-	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
 
+
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
 
 </head>
 <body>
 
+	<header>
+		<h1>Memory Game</h1>
+		<p>Inspired by <a href="https://thewitcher.com/pl/">The Witcher series</a></p>
+	</header>
 
+	<main>
+		<div class="board"></div>
+		<div class="score"></div>
+		<!-- <div class="againButton">Again?</div> -->
+	</main>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="gameEngine.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,183 @@
+body
+{
+    background-color: #222222;
+    font-size: 24px;
+    color: white;
+    margin: 0px !important;
+}
+
+.wrapper
+{
+    width: 100%;
+}
+
+#contact
+{
+    background-color: black;
+    width: 240px;
+    text-align: center;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    color: #d8d8d8ab
+}
+
+#contact:hover
+{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+#container
+{
+    width: 1200px;
+    min-height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 200px;
+    border-bottom: solid 1px #dddddd;
+}
+
+#header
+{
+    width: 100%;
+}
+#logo
+{
+    height: 500px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu
+{
+    margin-left: auto;
+    margin-right: auto;
+    color: #dddddd;
+    width: 1200px;
+    background-color: black;
+    text-align: center;
+    height: 47px;
+}
+
+ol
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 22px;
+    line-height: 200%;
+    display: inline-block;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+ol a
+{
+    display: block;
+}
+
+ol a:hover
+{
+    color: black ;
+}
+
+ol > li
+{
+    float: left;
+    width: 299px;
+    height: 45px;
+    border-right: 1px solid white;
+}
+
+ol >li:hover
+{
+    color: black;
+    background-color: white;
+}
+
+ol >li:first-child
+{
+    border-left: 1px solid white;
+    width: 298px;
+}
+
+#article
+{
+    background-color: #333333;
+    float: left;
+    width:  800px;
+    padding: 50px;
+    min-height: 2000px;
+}
+
+#sideBar
+{
+    width: 300px;
+    min-height: 3607px;
+    color: #dddddd;
+    background-color: black;
+    float: left;
+}
+
+.sideBarPart
+{
+    width: 200px;
+    text-align: left;
+    padding: 100px 50px;
+    font-size: 20px;
+    border-bottom: solid 1px #dddddd;
+}
+
+#personPhoto
+{
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 200px;
+    height: 283px;
+}
+
+a
+{
+    color:  #dddddd;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color:  white;
+    text-decoration: none;
+}
+
+#footer
+{
+    height: 20px;
+    text-align: right;
+    padding: 30px 300px 20px;
+    background-color: black;
+    font-size: 15px;
+}
+
+.scrollUp
+{
+    position: fixed;
+    right: 10%;
+    bottom: 100px;
+    width: 100px;
+    height: 100px;
+    background: url("img/scrollUp.png") no-repeat;
+    cursor: pointer;
+    display: none;
+}
+
+.sticky
+{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}

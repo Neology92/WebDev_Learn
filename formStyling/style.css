@@ -24,12 +24,7 @@ input[type=password]
 input[type=text]:focus,
 input[type=password]:focus
 {
-<<<<<<< HEAD
     border: 2px solid rgb(34, 34, 34);
-=======
-    border: 2px solid rgb(37, 77, 23);
-    background-color: #345536;
->>>>>>> 5a2f78376d1a9b191fb6db37cb3d7823a593f157
 }
 
 input[type=submit]

@@ -3,6 +3,6 @@
 ## Learned (basics of):
 - JS 
 - JQuery
-- HTML/HTML5
-- CSS
+- HTML5
+- CSS3
 

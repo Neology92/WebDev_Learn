@@ -13,15 +13,38 @@ $(function()
         pairsLeft = 6;
         firstCard = 0;
         turn = 0;
-        card =  ["ciri.png",    "geralt.png",   "iorweth.png",  "jaskier.png",
-                "triss.png",   "yen.png",      "jaskier.png",  "yen.png", 
-                "triss.png",   "iorweth.png",  "ciri.png",     "geralt.png",];
+        card = [];
+
+        randomizeCards();
 
         $(".board").html('<div class="card" id="c0"></div><div class="card" id="c1"></div><div class="card" id="c2"></div><div class="card" id="c3"></div><div class="card" id="c4"></div><div class="card" id="c5"></div><div class="card" id="c6"></div><div class="card" id="c7"></div><div class="card" id="c8"></div><div class="card" id="c9"></div><div class="card" id="c10"></div><div class="card" id="c11"></div>');
         $(".score").html("Turn: 0");
 
         $('.board').on('click', function(e){ clickOnBoard(e); });
     }
+
+
+    function randomizeCards()
+    {
+        var names = ["ciri.png",    "ciri.png",   "jaskier.png",  "jaskier.png",
+                     "triss.png",   "yen.png",    "iorweth.png",  "geralt.png", 
+                     "triss.png",   "yen.png",    "iorweth.png",  "geralt.png"];
+
+        let lastElem = names.length-1;
+        let pos = 0;
+        
+        while(lastElem >= 0)
+        {
+            let randNr = Math.floor(Math.random()*lastElem);
+
+            card[pos] = names[randNr];
+            names[randNr] = names[lastElem];
+
+            lastElem--;
+            pos++;
+        }
+    }
+
 
     function clickOnBoard(e)
     {
@@ -70,7 +93,7 @@ $(function()
 
     function showCard($card)
     {
-        var nr = $card.attr('id').substring(1);
+        let nr = $card.attr('id').substring(1);
         $card.css("background", "url(img/"+ card[nr] +")");
         $card.addClass("cardActive");
         $card.removeClass("card");

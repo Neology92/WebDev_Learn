@@ -1,8 +1,8 @@
 # WebDev Learning projects
 
-## Learned (basics of):
+## Learning:
 - JS 
 - JQuery
 - HTML5
 - CSS3
-
+- Bootstrap

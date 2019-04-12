@@ -1,8 +1,8 @@
-# Mainly JavaScript learning projects
+# WebDev Learning projects
 
-## Current studies path:
-- JQuery 
+## Learned (basics of):
+- JS 
+- JQuery
+- HTML/HTML5
+- CSS
 
-
-
-### Secondarily also CSS3 and HTML5

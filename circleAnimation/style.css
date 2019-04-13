@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(24, 13, 9);
+}
+
+.circle
+{
+    margin: 50px auto;
+    width: 30vh;
+    height: 30vh;
+    background-color: rgba(25, 0, 255, 0.342);
+    border-radius: 50%;
+    border-top: 120px solid red;
+    border-right: 120px solid green;
+    border-bottom: 120px solid purple;
+    border-left: 120px solid orange;
+
+    transition: all 5s ease-in-out;
+}
+
+.rotated
+{
+    transform: rotate(1800deg);
+    border-top-color: rgb(255, 0, 242);
+    border-right-color: rgb(255, 251, 0);
+    border-bottom-color: rgb(0, 204, 255);
+    border-left-color: rgb(29, 6, 105);
+    background-color: azure;
+}
+
+button
+{
+    position: absolute;
+    top: 70vh;
+    left: 50vw;
+    margin-left: -100px;
+    width: 200px;
+    height: 70px;
+    background-color: crimson;
+    color: white;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+}

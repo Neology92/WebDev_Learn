@@ -1,0 +1,79 @@
+body{
+    background-color: rgb(58, 58, 58);
+    margin: 0;
+    padding: 0;
+}
+
+.board
+{
+    height: 100vh;
+    width: 100vw;
+
+    background:    
+    url('img/airplane.png') no-repeat,
+    url('img/car1.png') no-repeat,
+    url('img/truck.png') no-repeat,
+    url('img/taxi.png') no-repeat,
+    url('img/car2.png') no-repeat,
+    url('img/road.png') repeat;
+
+    background-size: auto 40%, auto 20%, auto 23%, auto 20%, auto 24%, auto 18%;
+
+    background-position:  top 55% left -600%,top 10% left -37%, top 28% left -29%, top 55% left -55%, top 78% left -15%, top 0 left 0;
+
+    transition: background-position 6s ease-in-out;
+}
+
+.board:hover
+{
+    background-position:  top 50% left 400%,top 10% left 122%, top 28% left 122%, top 55% left 150%, top 78% left 125%, top 0 left -250%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#icons-rights
+{    
+    position: absolute;
+    height: 50px;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(36, 36, 36);
+}
+
+#icons-rights p
+{
+    display: inline-block;
+    color: rgb(98, 98, 98);
+    padding: 0 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a
+{
+    color: rgb(148, 148, 148);
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}

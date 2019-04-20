@@ -88,8 +88,8 @@ class Ball
         this.d = 20;
         this.x = cw/2 - this.d/2;
         this.y = ch/2 - this.d/2;
-        this.speedX = -1;
-        this.speedY = -1;
+        this.speedX = -5;
+        this.speedY = -5;
     }
 
     draw()
@@ -123,6 +123,22 @@ class Ball
             this.speedX *= -1;
         }
     }
+
+    speedUpX(acceleration)
+    {
+        if(this.speedX < 15 && this.speedX > -15)
+        {
+            if(this.speedX >= 0)
+                this.speedX += acceleration;
+            else 
+                this.speedX -= acceleration;    
+        }
+    }
+
+    changeSpeedY(acceleration)
+    {
+            this.speedY += acceleration;
+    }
 };
 
 class Paddle
@@ -137,7 +153,7 @@ class Paddle
         this.moveUp = false;
         this.moveDown = false;
 
-        this.speedY = 5;
+        this.speedY = 4;
     }
 
     draw()
@@ -191,13 +207,16 @@ class CollisionsDetector
 
     paddleCollision(ball, paddle)
     {
+        let collision = false;
+
         // L-Collision
-        if(ball.x + ball.d > paddle.x  &&  ball.x < paddle.x)
+       if(ball.x + ball.d > paddle.x  &&  ball.x < paddle.x)
         {
             if(ball.y + ball.d > paddle.y  &&  ball.y < paddle.y + paddle.height)
             {
                 ball.speedX *= -1;
                 ball.x = paddle.x - ball.d;
+                collision = true;
             }
         }
 
@@ -208,16 +227,18 @@ class CollisionsDetector
             {
                 ball.speedX *= -1;
                 ball.x = paddle.x + paddle.width;
+                collision = true;
             }
         }
-
+        
         // Top-Collision
         if(ball.y + ball.d >= paddle.y  &&  ball.y < paddle.y)
         {
             if(ball.x < paddle.x + paddle.width  &&  ball.x + ball.d > paddle.x)
             {
                 ball.speedY *= -1;
-                ball.y = paddle.y - ball.d;
+                ball.y = paddle.y - ball.d;  
+                collision = true;
             }
         }
 
@@ -227,8 +248,19 @@ class CollisionsDetector
             if(ball.x < paddle.x + paddle.width  &&  ball.x + ball.d > paddle.x)
             {
                 ball.speedY *= -1;
-                ball.y = paddle.y + paddle.height;
+                ball.y = paddle.y + paddle.height;  
+                collision = true;             
             }
+        }
+        
+        if(collision)
+        {
+            if(paddle.moveUp)
+                ball.changeSpeedY(-2);
+            else if(paddle.moveDown)
+                ball.changeSpeedY(2);
+
+            ball.speedUpX(1);
         }
 
     }

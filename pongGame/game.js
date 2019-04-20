@@ -12,10 +12,12 @@ let ball;
 let pad1;
 let pad2;
 let collisions;
+let board;
 
 
 function setup()
 {
+    board = new GameBoard();
     ball = new Ball();
     pad1 = new Paddle();
     pad2 = new Paddle(910);
@@ -43,8 +45,6 @@ function setup()
       })
 }
 
-
-
 function gameLoop() 
 { 
     drawTable();
@@ -60,7 +60,6 @@ function gameLoop()
     ball.move();
     ball.draw();
 }
-
 
 function drawTable()
 {
@@ -79,6 +78,10 @@ function drawTable()
         ctx.fillRect(posX, posY, lineW, lineH); 
     }
 
+    ctx.font = "80px Arial";
+    ctx.fillText(board.scoreL, cw/2 - cw/10 - 40, ch/6);
+    ctx.fillText(board.scoreR, cw/2 + cw/10, ch/6);
+
 }
 
 class Ball
@@ -88,8 +91,9 @@ class Ball
         this.d = 20;
         this.x = cw/2 - this.d/2;
         this.y = ch/2 - this.d/2;
-        this.speedX = -5;
-        this.speedY = -5;
+        this.speedX = -4;
+        this.speedY = 4;
+        this.speedLimit = 14;
     }
 
     draw()
@@ -118,15 +122,21 @@ class Ball
             this.y = ch - this.d;
         }
 
-        if(this.x <= 0 || this.x+this.d >= cw)
+        if(this.x <= 0)
         {
-            this.speedX *= -1;
+            board.pointR();
+            board.nextRound();
+        }
+        else if(this.x + this.d >= cw)
+        {
+            board.pointL();
+            board.nextRound();
         }
     }
 
     speedUpX(acceleration)
     {
-        if(this.speedX < 15 && this.speedX > -15)
+        if(this.speedX < this.speedLimit && this.speedX > -this.speedLimit)
         {
             if(this.speedX >= 0)
                 this.speedX += acceleration;
@@ -178,7 +188,56 @@ class Paddle
 
     moveAI()
     {
-        this.y = (ball.y + ball.d/2) - this.height/2;
+        let padMid = this.y + this.height/2;
+        let ballMidY = ball.y + ball.d/2;
+        let ballMidX = ball.x + ball.d/2;
+        
+        if(ballMidX > cw/2)
+        {            
+            if(padMid > ballMidY)
+            {
+                this.y -= this.speedY;
+            }
+            else if (padMid < ballMidY)
+            {
+                this.y += this.speedY;
+            }
+        }
+        else if (ballMidX > cw/2 - cw/3)
+        {
+            if(ballMidY < ch/2 - ch/5)
+            {
+                if(padMid < ch/2 - ch/5)
+                    this.y += this.speedY;
+                else if  (padMid > ch/2 - ch/5)
+                    this.y -= this.speedY;
+            }
+            else if (ballMidY > ch/2 - ch/5  &&  ballMidY < ch/2)
+            {
+                if(padMid < ch/2)
+                    this.y += this.speedY;
+                else if  (padMid > ch/2)
+                    this.y -= this.speedY;            
+            }
+            else if(ballMidY > ch/2 + ch/5)
+            {
+                if(padMid > ch/2 + ch/5)
+                    this.y -= this.speedY;
+                else if  (padMid < ch/2 + ch/5)
+                    this.y += this.speedY;
+            }        
+        }
+        else
+        {
+            if(ballMidX > 200)
+                this.y -= this.speedY;
+            if(ballMidX > 100)
+                this.y += this.speedY;
+            if(ballMidX > 50)
+                this.y -= this.speedY;
+        }
+        
+
         this.checkBorders();
     }
 
@@ -265,6 +324,32 @@ class CollisionsDetector
 
     }
 };
+
+class GameBoard
+{
+    constructor()
+    {
+        this.scoreL = 0;
+        this.scoreR = 0;
+    }
+
+    pointL()
+    {
+        this.scoreL++;
+    }
+
+    pointR()
+    {
+        this.scoreR++;
+    }
+
+    nextRound()
+    {
+        ball = new Ball();
+        pad1 = new Paddle();
+        pad2 = new Paddle(910);
+    }
+}
 
 
 setup();

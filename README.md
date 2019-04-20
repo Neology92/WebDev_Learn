@@ -3,6 +3,7 @@
 ## Learning:
 - JS 
 - JQuery
+- Canvas
 - HTML5
-- CSS3
+- CSS...3
 - Bootstrap

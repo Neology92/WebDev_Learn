@@ -40,17 +40,6 @@ function draw()
         else
             bubbles[i].changeBrightness(0);
             
-            
-        //checking if mouse hovers bubble
-        let distance = dist(bubbles[i].x, bubbles[i].y, mouseX, mouseY); 
-        if(distance < bubbles[i].r)
-        {
-            bubbles[i].changeShakingStrength(0);          
-        }
-        else
-        {
-            bubbles[i].changeShakingStrength(2); 
-        }
 
         bubbles[i].show();        
     }
@@ -61,6 +50,7 @@ function mousePressed()
 {
     let insideBubble = false;
 
+    // Grow clicked bubbles
     for(let i=0; i<bubbles.length; i++)
     {
         let distance = dist(bubbles[i].x, bubbles[i].y, mouseX, mouseY); 
@@ -71,10 +61,28 @@ function mousePressed()
         }
     }   
 
+    // Create new bubble if clicked background
     if(!insideBubble)
     {
         let r = random(10, 30);
         let b = new Bubble(mouseX, mouseY, r);
         bubbles.push(b); 
+    }
+}
+
+function mouseMoved()
+{
+    //checking if mouse hovers bubble
+    for(let i=0; i<bubbles.length; i++)
+    {
+        let distance = dist(bubbles[i].x, bubbles[i].y, mouseX, mouseY); 
+        if(distance < bubbles[i].r)
+        {
+            bubbles[i].changeShakingStrength(0);          
+        }
+        else
+        {
+            bubbles[i].changeShakingStrength(2); 
+        }
     }
 }

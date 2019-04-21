@@ -12,19 +12,19 @@ class Bubble
         this.x = x;
         this.y = y;
         this.r = r;
-        this.alpha = 0;
+        this.brightness = 0;
     }
 
     //Allows to change bubble color
     changeBrightness(bright)
     {
-        this.alpha = bright;
+        this.brightness = bright;
     }
 
     //Allows to draw bubble on canvas
     show()
     {
-        fill(255, this.alpha);
+        fill(this.brightness, 127);
         stroke(255);
         strokeWeight(3);
 

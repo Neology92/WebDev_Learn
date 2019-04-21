@@ -5,11 +5,11 @@ function setup()
 {
     createCanvas(600, 600);
 
-    for(let i=0; i<100; i++)
+    for(let i=0; i<50; i++)
     {
         let x = random(10, 590);
         let y = random(10, 590);
-        let r = random(10, 40);
+        let r = random(10, 60);
 
         bubbles[i] = new Bubble(x,y,r);
     }

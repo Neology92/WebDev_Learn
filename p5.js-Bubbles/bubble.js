@@ -31,11 +31,11 @@ class Bubble
     // Makes bubble grows
     grow()
     {
-        this.r++;
+        this.r += 2;
     }
 
     // Checks if point is inside bubble
-    isPositionInside(posX, posY)
+    contains(posX, posY)
     {
         let distance = dist(this.x, this.y, posX, posY);     
         return (distance < this.r);

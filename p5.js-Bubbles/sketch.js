@@ -53,7 +53,7 @@ function mousePressed()
     // Grow clicked bubbles
     for(let b of bubbles)
     {
-        if(b.isPositionInside(mouseX, mouseY))
+        if(b.contains(mouseX, mouseY))
         {
             b.grow();    
             insideBubble = true;    
@@ -74,7 +74,7 @@ function mouseMoved()
     //checking if mouse hovers bubble
     for(let b of bubbles)
     {
-        if(b.isPositionInside(mouseX, mouseY))
+        if(b.contains(mouseX, mouseY))
         {
             b.changeShakingStrength(0);          
         }
@@ -87,10 +87,10 @@ function mouseMoved()
 
 function mouseWheel()
 {
-    // Grow clicked bubbles
+    // Delete bubbles if mouseWheel rolled on it
     for(let i=0; i < bubbles.length; i++)
     {
-        if(bubbles[i].isPositionInside(mouseX, mouseY))
+        if(bubbles[i].contains(mouseX, mouseY))
         {    
             bubbles.splice(i, 1);
         }

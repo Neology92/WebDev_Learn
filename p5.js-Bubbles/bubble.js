@@ -27,6 +27,11 @@ class Bubble
         this.shakingRadius = power;
     }
 
+    clicked()
+    {
+        this.r++;
+    }
+
     //Allows to draw bubble on canvas
     show()
     {

@@ -45,7 +45,7 @@ function draw()
         let distance = dist(bubbles[i].x, bubbles[i].y, mouseX, mouseY); 
         if(distance < bubbles[i].r)
         {
-            bubbles[i].changeShakingStrength(20);          
+            bubbles[i].changeShakingStrength(0);          
         }
         else
         {
@@ -55,19 +55,24 @@ function draw()
         bubbles[i].show();        
     }
 
-    if(mouseIsPressed)
-    {
-        let r = random(10, 30);
-        let b = new Bubble(mouseX, mouseY, r);
-        bubbles.push(b); 
-    }
+    // if(mouseIsPressed)
+    // {
+    //     let r = random(10, 30);
+    //     let b = new Bubble(mouseX, mouseY, r);
+    //     bubbles.push(b); 
+    // }
 
 }
 
 
 function mousePressed()
 {
-        // let r = random(10, 50);
-        // let b = new Bubble(mouseX, mouseY, r);
-        // bubbles.push(b); 
+    for(let i=0; i<bubbles.length; i++)
+    {
+        let distance = dist(bubbles[i].x, bubbles[i].y, mouseX, mouseY); 
+        if(distance < bubbles[i].r)
+        {
+            bubbles[i].clicked();        
+        }
+    }   
 }

@@ -13,6 +13,7 @@ class Bubble
         this.y = y;
         this.r = r;
         this.brightness = 0;
+        this.shakingRadius = 2;
     }
 
     //Allows to change bubble color
@@ -21,12 +22,17 @@ class Bubble
         this.brightness = bright;
     }
 
+    changeShakingStrength(power)
+    {
+        this.shakingRadius = power;
+    }
+
     //Allows to draw bubble on canvas
     show()
     {
         fill(this.brightness, 127);
         stroke(255);
-        strokeWeight(3);
+        strokeWeight(2);
 
         ellipse(this.x, this.y, this.r*2);
     }
@@ -34,10 +40,8 @@ class Bubble
     //Makes bubble vibrating
     move()
     {
-        const strength = 2; //Of vibrations
-
-        this.x += random(-strength, strength);
-        this.y += random(-strength, strength);
+        this.x += random(-this.shakingRadius, this.shakingRadius);
+        this.y += random(-this.shakingRadius, this.shakingRadius);
     }
 
     // Checks if bubble intersects with other bubble

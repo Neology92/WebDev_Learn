@@ -1,11 +1,10 @@
 let bubbles = [];
-let ticker = 0;
 
 function setup()
 {
     createCanvas(600, 600);
 
-    for(let i=0; i<50; i++)
+    for(let i=0; i<5; i++)
     {
         let x = random(10, 590);
         let y = random(10, 590);
@@ -41,7 +40,34 @@ function draw()
         else
             bubbles[i].changeBrightness(0);
             
+            
+        //checking if mouse hovers bubble
+        let distance = dist(bubbles[i].x, bubbles[i].y, mouseX, mouseY); 
+        if(distance < bubbles[i].r)
+        {
+            bubbles[i].changeShakingStrength(20);          
+        }
+        else
+        {
+            bubbles[i].changeShakingStrength(2); 
+        }
+
         bubbles[i].show();        
     }
 
+    if(mouseIsPressed)
+    {
+        let r = random(10, 30);
+        let b = new Bubble(mouseX, mouseY, r);
+        bubbles.push(b); 
+    }
+
+}
+
+
+function mousePressed()
+{
+        // let r = random(10, 50);
+        // let b = new Bubble(mouseX, mouseY, r);
+        // bubbles.push(b); 
 }

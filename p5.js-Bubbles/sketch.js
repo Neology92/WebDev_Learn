@@ -51,12 +51,11 @@ function mousePressed()
     let insideBubble = false;
 
     // Grow clicked bubbles
-    for(let i=0; i<bubbles.length; i++)
+    for(let b of bubbles)
     {
-        let distance = dist(bubbles[i].x, bubbles[i].y, mouseX, mouseY); 
-        if(distance < bubbles[i].r)
+        if(b.isPositionInside(mouseX, mouseY))
         {
-            bubbles[i].clicked();    
+            b.grow();    
             insideBubble = true;    
         }
     }   
@@ -73,16 +72,27 @@ function mousePressed()
 function mouseMoved()
 {
     //checking if mouse hovers bubble
-    for(let i=0; i<bubbles.length; i++)
+    for(let b of bubbles)
     {
-        let distance = dist(bubbles[i].x, bubbles[i].y, mouseX, mouseY); 
-        if(distance < bubbles[i].r)
+        if(b.isPositionInside(mouseX, mouseY))
         {
-            bubbles[i].changeShakingStrength(0);          
+            b.changeShakingStrength(0);          
         }
         else
         {
-            bubbles[i].changeShakingStrength(2); 
+            b.changeShakingStrength(2); 
         }
     }
+}
+
+function mouseWheel()
+{
+    // Grow clicked bubbles
+    for(let i=0; i < bubbles.length; i++)
+    {
+        if(bubbles[i].isPositionInside(mouseX, mouseY))
+        {    
+            bubbles.splice(i, 1);
+        }
+    }  
 }

@@ -22,14 +22,23 @@ class Bubble
         this.brightness = bright;
     }
 
+    // Allows to change bubbles shaking radius
     changeShakingStrength(power)
     {
         this.shakingRadius = power;
     }
 
-    clicked()
+    // Makes bubble grows
+    grow()
     {
         this.r++;
+    }
+
+    // Checks if point is inside bubble
+    isPositionInside(posX, posY)
+    {
+        let distance = dist(this.x, this.y, posX, posY);     
+        return (distance < this.r);
     }
 
     //Allows to draw bubble on canvas

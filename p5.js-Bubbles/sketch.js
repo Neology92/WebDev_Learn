@@ -2,12 +2,15 @@ let bubbles = [];
 
 function setup()
 {
-    createCanvas(600, 600);
+    canvasWidth = 600;
+    canvasHeight = 600;
+
+    createCanvas(canvasWidth, canvasHeight);
 
     for(let i=0; i<5; i++)
     {
-        let x = random(10, 590);
-        let y = random(10, 590);
+        let x = random(10, width-10);
+        let y = random(10, height-10);
         let r = random(10, 60);
 
         bubbles[i] = new Bubble(x,y,r);

@@ -41,6 +41,13 @@ class Bubble
         return (distance < this.r);
     }
 
+    //Allows to move bubble
+    newPosition(x, y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+
     //Allows to draw bubble on canvas
     show()
     {

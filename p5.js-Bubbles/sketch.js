@@ -96,3 +96,16 @@ function mouseWheel()
         }
     }  
 }
+
+
+function mouseDragged()
+{
+    // Delete bubbles if mouseWheel rolled on it
+    for(let b of bubbles)
+    {
+        if(b.contains(mouseX, mouseY))
+        {    
+            b.newPosition(mouseX, mouseY);
+        }
+    }  
+}

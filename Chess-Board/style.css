@@ -12,7 +12,8 @@ body{
     background-color: rgb(110, 110, 110);
     margin: 200px auto 100px auto;
     border: 3px black solid;
-    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #board div
@@ -20,7 +21,7 @@ body{
     background-color: white;
     width: 80px;
     height: 80px;
-    display: inline-block;
+    display: block;
 }
 
 #board div:nth-child(even)

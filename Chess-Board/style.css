@@ -12,15 +12,15 @@ body{
     background-color: rgb(110, 110, 110);
     margin: 200px auto 100px auto;
     border: 3px black solid;
-    overflow: hidden;
+    font-size: 0;
 }
 
 #board div
 {
     background-color: white;
     width: 80px;
-    height: 80px;;
-    float: left;
+    height: 80px;
+    display: inline-block;
 }
 
 #board div:nth-child(even)

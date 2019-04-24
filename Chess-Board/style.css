@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(194, 194, 194);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#board{
+    width: 400px;
+    background-color: rgb(110, 110, 110);
+    margin: 200px auto 100px auto;
+    border: 3px black solid;
+    overflow: hidden;
+}
+
+#board div
+{
+    background-color: white;
+    width: 80px;
+    height: 80px;;
+    float: left;
+}
+
+#board div:nth-child(even)
+{
+    background-color: black;
+}
+
+
+h1
+{
+    text-align: center;
+    font-family: arial;
+}

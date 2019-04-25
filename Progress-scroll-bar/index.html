@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>...</title>
+
+    <style>
+    
+        body
+        {
+            background: linear-gradient( white, rgba(255, 0, 0, 0.472), white, rgba(0, 89, 255, 0.472));            
+            min-height: 1000vh;
+        }
+
+        .bar
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0px;
+            height: 4vh;
+            background-color: black;
+            transition: width 0.5s linear;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="bar"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+
+        const progressBar = () =>{
+
+            let currentScroll = Math.round($(window).scrollTop() / ($(document).height() - $(window).height()) * 100);
+
+            $(".bar").css("width", currentScroll + "%");
+
+        }
+
+        $(document).on("scroll", progressBar);
+
+    </script>
+
+</body>
+</html>
